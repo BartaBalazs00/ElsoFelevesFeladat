@@ -14,8 +14,8 @@ namespace ElsoFelevesFeladat
         {
             this.negyzet = new int[oszlopokSzama, sorokSzama];
             UjJatek();
-            
         }
+        public int[,] getNegyzet{ get { return this.negyzet; } }
         public void UjJatek()
         {
             int szelesseg = this.negyzet.GetLength(0) + 2;

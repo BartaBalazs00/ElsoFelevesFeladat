@@ -85,21 +85,29 @@ namespace ElsoFelevesFeladat
                 while (!negyzet.TeleVanEANegyzet() && !negyzet.UresEANegyzet())
                 {
                     // az építő jön
-                    /*
                     positionWidth = negyzet.NegyzetHossza() / 2 + 1;
                     positionHeight = negyzet.NegyzetMagassaga() + 3;
                     szinSzama = random.Next(1, 5);
                     negyzet.NegyzetKirajzolasa(szinSzama, "Építő");
                     oszlopSzam = Mozgas(positionWidth, positionHeight, negyzet);
                     negyzet.NegyzetEpitese(oszlopSzam, szinSzama);
-                    */
+
                     //romboló jön
-                    positionWidth = negyzet.NegyzetHossza() / 2 + 1;
-                    positionHeight = negyzet.NegyzetMagassaga() + 3;
-                    szinSzama = random.Next(1, 5);
-                    negyzet.NegyzetKirajzolasa(szinSzama, "Romboló");
-                    oszlopSzam = Mozgas(positionWidth, positionHeight, negyzet);
-                    negyzet.NegyzetRombolasa(oszlopSzam, szinSzama);
+                    if (!negyzet.TeleVanEANegyzet())
+                    {
+                        positionWidth = negyzet.NegyzetHossza() / 2 + 1;
+                        positionHeight = negyzet.NegyzetMagassaga() + 3;
+                        szinSzama = random.Next(1, 5);
+                        /*ha nincs olyan szín ami a random színe generáljon másokat meg kéne csinálni
+                        for (int i = 0; i < negyzet.getNegyzet.GetLength(0); i++)
+                        {
+
+                        }
+                        */
+                        negyzet.NegyzetKirajzolasa(szinSzama, "Romboló");
+                        oszlopSzam = Mozgas(positionWidth, positionHeight, negyzet);
+                        negyzet.NegyzetRombolasa(oszlopSzam, szinSzama);
+                    }
                 }
                 if (negyzet.TeleVanEANegyzet())
                 {
@@ -125,22 +133,6 @@ namespace ElsoFelevesFeladat
                     ujJatek = false;
                 }
             }
-
-            /*
-            
-            int szinSzama = random.Next(1, 5);
-            NegyzetKirajzolasa(negyzet, szinSzama);
-
-            int positionWidth = negyzet.GetLength(1)/2+1;
-            int positionHeight = negyzet.GetLength(1)+3;
-            
-            
-            while (true)
-            {
-                NegyzetKirajzolasa(negyzet, szinSzama);
-                
-            }
-            */
             Console.ReadKey();
         }
     }
