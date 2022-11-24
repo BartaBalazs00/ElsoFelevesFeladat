@@ -49,6 +49,7 @@ namespace ElsoFelevesFeladat
         //megnézi, hogy tele van-e a négyzet
         public bool TeleVanEANegyzet()
         {
+            /*
             for (int i = 0; i < this.negyzet.GetLength(0); i++)
             {
                 for (int j = 0; j < this.negyzet.GetLength(1); j++)
@@ -59,6 +60,14 @@ namespace ElsoFelevesFeladat
                     }
                 }
             }
+            */
+            for (int i = 0; i < this.negyzet.GetLength(1); i++)
+			{
+                if (this.negyzet[this.NegyzetMagassaga-1, i] == 0)
+	            {
+                    return false;
+	            }
+			}
             return true;
         }
         //feltölti a négyzeteket random számokkal 1 és 4 között
