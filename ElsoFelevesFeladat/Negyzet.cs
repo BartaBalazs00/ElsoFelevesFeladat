@@ -49,21 +49,9 @@ namespace ElsoFelevesFeladat
         //megnézi, hogy tele van-e a négyzet
         public bool TeleVanEANegyzet()
         {
-            /*
-            for (int i = 0; i < this.negyzet.GetLength(0); i++)
-            {
-                for (int j = 0; j < this.negyzet.GetLength(1); j++)
-                {
-                    if (this.negyzet[i, j] == 0)
-                    {
-                        return false;
-                    }
-                }
-            }
-            */
             for (int i = 0; i < this.negyzet.GetLength(1); i++)
 			{
-                if (this.negyzet[this.NegyzetMagassaga-1, i] == 0)
+                if (this.negyzet[this.NegyzetMagassaga()-1, i] == 0)
 	            {
                     return false;
 	            }

@@ -67,8 +67,8 @@ namespace ElsoFelevesFeladat
                 Console.WriteLine("Add meg, hogy milyen nagy legyen a jaták 6-20 közötti páros szám");
                 string nagysagString = Console.ReadLine();
                 int nagysag = 0;
-                //addig csináljuk ameddig nem számot, vagy nem 5 és 20 közötti számot adott meg
-                while (!int.TryParse(nagysagString, out nagysag) || (nagysag < 2 || nagysag > 20) || (nagysag % 2 == 1))
+                //addig csináljuk ameddig nem számot, vagy nem 6 és 20 közötti számot adott meg
+                while (!int.TryParse(nagysagString, out nagysag) || (nagysag < 6 || nagysag > 20) || (nagysag % 2 == 1))
                 {
                     Console.WriteLine("nem számot adtál meg, vagy nem a megfelelő intervallumon belül. Add meg újra");
                     nagysagString = Console.ReadLine();
@@ -98,12 +98,6 @@ namespace ElsoFelevesFeladat
                         positionWidth = negyzet.NegyzetHossza() / 2 + 1;
                         positionHeight = negyzet.NegyzetMagassaga() + 3;
                         szinSzama = random.Next(1, 5);
-                        /*ha nincs olyan szín ami a random színe generáljon másokat meg kéne csinálni
-                        for (int i = 0; i < negyzet.getNegyzet.GetLength(0); i++)
-                        {
-
-                        }
-                        */
                         negyzet.NegyzetKirajzolasa(szinSzama, "Romboló");
                         oszlopSzam = Mozgas(positionWidth, positionHeight, negyzet);
                         negyzet.NegyzetRombolasa(oszlopSzam, szinSzama);
@@ -133,7 +127,6 @@ namespace ElsoFelevesFeladat
                     ujJatek = false;
                 }
             }
-            Console.ReadKey();
         }
     }
 }
